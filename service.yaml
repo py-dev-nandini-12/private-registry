@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myplugin-service
+  namespace: portal
+spec:
+  selector:
+    matchLabels:
+      app-v1: myplugin,
+      app-v2: myplugin-v2
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP
