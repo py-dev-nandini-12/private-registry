@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myplugin-deployment
+  namespace: portal
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myplugin
+  template:
+    metadata:
+      labels:
+        app: myplugin
+    spec:
+      containers:
+        - name: myplugin
+          image: nandinichatterjee/myplugin:2023-12-14-122739
+          ports:
+            - containerPort: 80
