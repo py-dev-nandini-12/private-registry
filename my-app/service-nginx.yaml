@@ -7,7 +7,6 @@ spec:
   selector:
     app: myplugin
   ports:
-    - protocol: TCP
       port: 80
       targetPort: 80
-  type: LoadBalancer  # Use "LoadBalancer" if you want to expose the service externally
+
