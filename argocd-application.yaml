@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myplugin-app
+  namespace: portal
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/py-dev-nandini-12/private-registry
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: portal
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
